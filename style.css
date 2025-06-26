@@ -1,4 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/**KeyFrames**/
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
 
 * {
     margin: 0;
@@ -11,10 +33,25 @@ h1 {
     font-weight: 400;
     font-size: 6em;
     font-style: normal;
-    word-spacing: 2px;
     text-align: center;
+    color: #AEC8A4;
+    text-shadow: 4px 4px #8A784E;
+}
+
+h1 img {
+    width: 1em;
+    height: 1em;
+    margin-left: 12px;
+}
+
+.desc {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    text-align: center;
+
 }
 
 body {
-    background-color: gray;
+    background-color: #E7EFC7;
 }
