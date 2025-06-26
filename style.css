@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Modak", cursive;
+    font-weight: 400;
+    font-size: 6em;
+    font-style: normal;
+    word-spacing: 2px;
+    text-align: center;
+}
+
+body {
+    background-color: gray;
+}
