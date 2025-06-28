@@ -2,13 +2,17 @@
 
 //VARIABLES
 const timer = document.querySelector('.timer');
+const startbtn = document.querySelector('.start');
+const pausebtn = document.querySelector('.pause');
+const stopbtn = document.querySelector('.stop');
 let counter = 10;
+let timestart;
 
 
 //FUNCTIONS
 
 
-const timestart = setInterval(countDown, 1000);
+
 function countDown() {
 
     if (counter === 1) {
@@ -22,3 +26,6 @@ function countDown() {
 
 
 //LISTENERS
+startbtn.addEventListener('click', function () {
+    timestart = setInterval(countDown, 1000);
+});
