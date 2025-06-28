@@ -26,6 +26,10 @@ function pauseTime() {
     console.log("Pause button is clicked!");
 }
 
+function resumeTime() {
+    timestart = setInterval(countDown, 1000);
+}
+
 
 //LISTENERS
 
@@ -41,5 +45,10 @@ pausebtn.addEventListener('click', function () {
     pausebtn.classList.add('hidden');
     resumebtn.classList.remove('hidden');
 
+});
+
+//Resume Button
+resumebtn.addEventListener('click', function () {
+    resumeTime();
 });
 
