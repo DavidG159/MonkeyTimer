@@ -5,6 +5,7 @@ const timer = document.querySelector('.timer');
 const startbtn = document.querySelector('.start');
 const pausebtn = document.querySelector('.pause');
 const stopbtn = document.querySelector('.stop');
+const resumebtn = document.querySelector('.resume');
 let counter = 10;
 let timestart;
 
@@ -27,8 +28,18 @@ function pauseTime() {
 
 
 //LISTENERS
+
+//Start Button
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
     timestart = setInterval(countDown, 1000);
     startbtn.disabled = true;
+});
+
+//Pause Button
+pausebtn.addEventListener('click', function () {
+    pauseTime();
+    pausebtn.classList.add('hidden');
+    resumebtn.classList.remove('hidden');
+
 });
 
