@@ -52,6 +52,12 @@ h1 img {
 
 }
 
+.timer {
+    font-weight: 700;
+    text-align: center;
+    padding-top: 2em;
+}
+
 body {
     background-color: #E7EFC7;
 }
