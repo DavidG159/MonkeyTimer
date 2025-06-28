@@ -8,12 +8,15 @@ const stopbtn = document.querySelector('.stop');
 const resumebtn = document.querySelector('.resume');
 const addTime = document.querySelector('.addTime');
 const minusTime = document.querySelector('.decreaseTime');
+const restart = document.querySelector('.restartTime');
 
 let extratime = 10;
-
 let counter = 10;
 let timestart;
 
+
+
+rewindTime();
 
 //FUNCTIONS
 function countDown() {
@@ -24,6 +27,7 @@ function countDown() {
         resumebtn.disabled = true;
         pausebtn.classList.add('hidden');
         resumebtn.classList.add('hidden');
+        startbtn.classList.remove('hidden');
 
 
     }
@@ -31,29 +35,50 @@ function countDown() {
     timer.textContent = counter;                //updating the timer in the DOM 
 }
 
+
+//restart
+function rewindTime() {
+    clearInterval(timestart);
+    counter = 10;
+    timer.textContent = counter;
+    startbtn.disabled = false;
+    startbtn.classList.remove('hidden');
+    pausebtn.classList.add('hidden');
+    resumebtn.classList.add('hidden');
+    stopbtn.classList.add('hidden');
+    addTime.classList.remove('hidden');
+    minusTime.classList.remove('hidden');
+
+
+
+
+}
+
+//pause
 function pauseTime() {
     clearInterval(timestart);
     console.log("Pause button is clicked!");
 }
-
+//resume
 function resumeTime() {
     timestart = setInterval(countDown, 1000);
     console.log('Time is resumed');
 }
-
+//add time
 function addTimer() {
     timer.textContent = counter += extratime;
 
 }
-
+//minus time
 function minusTimer() {
 
-    if (counter !== 0 || counter < 0) {
-        timer.textContent = counter -= extratime;
+    if (counter === 10) {
+        alert("Couldn't decrease the time anymore! Please add more time!")
     } else {
-        alert("Can't decrease time anymore");
+        timer.textContent = counter -= extratime;
     }
 }
+
 
 //LISTENERS
 
@@ -62,6 +87,11 @@ startbtn.addEventListener('click', function () { //when the start button is clic
     timestart = setInterval(countDown, 1000);
     startbtn.disabled = true;                   //disables the start button when the timer starts
     startbtn.classList.add('hidden');           // hides the start button when the timer starts
+    addTime.classList.add('hidden');
+    minusTime.classList.add('hidden');
+
+    pausebtn.classList.remove('hidden');
+
 });
 
 //Pause Button
@@ -86,6 +116,7 @@ resumebtn.addEventListener('click', function () {
 
 });
 
+
 addTime.addEventListener('click', function () {
 
     addTimer();
@@ -98,4 +129,10 @@ minusTime.addEventListener('click', function () {
 
 });
 
+restart.addEventListener('click', function () {
 
+    rewindTime();
+});
+
+
+console.log(timestart);
