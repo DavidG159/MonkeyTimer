@@ -16,9 +16,14 @@ function countDown() {
         clearInterval(timestart);
         console.log("STOP")
         startbtn.disabled = false;
+        resumebtn.disabled = true;
+        pausebtn.classList.add('hidden');
+        resumebtn.classList.add('hidden');
+
+
     }
-    counter--;                  //decrements the counter
-    timer.textContent = counter;//updating the timer in the DOM 
+    counter--;                                  //decrements the counter
+    timer.textContent = counter;                //updating the timer in the DOM 
 }
 
 function pauseTime() {
@@ -28,6 +33,7 @@ function pauseTime() {
 
 function resumeTime() {
     timestart = setInterval(countDown, 1000);
+    console.log('Time is resumed');
 }
 
 
@@ -36,19 +42,29 @@ function resumeTime() {
 //Start Button
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
     timestart = setInterval(countDown, 1000);
-    startbtn.disabled = true;
+    startbtn.disabled = true;                   //disables the start button when the timer starts
+    startbtn.classList.add('hidden');           // hides the start button when the timer starts
 });
 
 //Pause Button
 pausebtn.addEventListener('click', function () {
     pauseTime();
-    pausebtn.classList.add('hidden');
-    resumebtn.classList.remove('hidden');
+    pausebtn.disabled = true;                   // disables the pause button when clicked to prevent bugs 
+    resumebtn.disabled = false;                 // undisables the resume button so that the user can resume the timer when the pause button is clicked
+
+    resumebtn.classList.remove('hidden');       // shows the resume button when the pause button is clicked
+    pausebtn.classList.add('hidden');           // removes the pause button 
 
 });
 
 //Resume Button
 resumebtn.addEventListener('click', function () {
     resumeTime();
+    pausebtn.disabled = false;                 //undisables the pause button
+    resumebtn.disabled = true;                 //disables the resume button to prevent bugs
+
+    resumebtn.classList.add('hidden');         //hides the resume button 
+    pausebtn.classList.remove('hidden');       //unhide the pause button
+
 });
 
