@@ -14,6 +14,7 @@ function countDown() {
     if (counter === 1) {
         clearInterval(timestart);
         console.log("STOP")
+        startbtn.disabled = false;
     }
     counter--;                  //decrements the counter
     timer.textContent = counter;//updating the timer in the DOM 
@@ -28,6 +29,6 @@ function pauseTime() {
 //LISTENERS
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
     timestart = setInterval(countDown, 1000);
+    startbtn.disabled = true;
 });
-
 
