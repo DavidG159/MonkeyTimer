@@ -6,6 +6,11 @@ const startbtn = document.querySelector('.start');
 const pausebtn = document.querySelector('.pause');
 const stopbtn = document.querySelector('.stop');
 const resumebtn = document.querySelector('.resume');
+const addTime = document.querySelector('.addTime');
+const minusTime = document.querySelector('.decreaseTime');
+
+let extratime = 10;
+
 let counter = 10;
 let timestart;
 
@@ -36,6 +41,19 @@ function resumeTime() {
     console.log('Time is resumed');
 }
 
+function addTimer() {
+    timer.textContent = counter += extratime;
+
+}
+
+function minusTimer() {
+
+    if (counter !== 0 || counter < 0) {
+        timer.textContent = counter -= extratime;
+    } else {
+        alert("Can't decrease time anymore");
+    }
+}
 
 //LISTENERS
 
@@ -67,4 +85,17 @@ resumebtn.addEventListener('click', function () {
     pausebtn.classList.remove('hidden');       //unhide the pause button
 
 });
+
+addTime.addEventListener('click', function () {
+
+    addTimer();
+
+});
+
+minusTime.addEventListener('click', function () {
+
+    minusTimer();
+
+});
+
 
