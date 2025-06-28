@@ -7,8 +7,8 @@ let counter = 10;
 
 //FUNCTIONS
 
-const timestart = setInterval(countDown, 1000);
 
+const timestart = setInterval(countDown, 1000);
 function countDown() {
 
     if (counter === 1) {
@@ -18,7 +18,6 @@ function countDown() {
     counter--;
     timer.textContent = counter;
 }
-
 
 
 

@@ -58,6 +58,20 @@ h1 img {
     padding-top: 2em;
 }
 
+.btn {
+    height: 2em;
+    width: 6em;
+}
+
+.btnplacement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    padding-top: 2em;
+}
+
+
 body {
     background-color: #E7EFC7;
 }
