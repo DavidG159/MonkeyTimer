@@ -9,10 +9,31 @@ const resumebtn = document.querySelector('.resume');
 const addTime = document.querySelector('.addTime');
 const minusTime = document.querySelector('.decreaseTime');
 const restart = document.querySelector('.restartTime');
+//SFX
+const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 
 let extratime = 10;
 let counter = 10;
 let timestart;
+let test = 0;
+
+
+
+function repeatAudio() {
+
+
+    monkey1.play();
+    test++;
+
+    if (test === 3) {
+        monkey1.removeEventListener("ended");
+        console.log('SFX STOP')
+    } else {
+        monkey1.addEventListener("ended", repeatAudio);
+        console.log('Repeat')
+    }
+}
+
 
 
 
@@ -26,6 +47,8 @@ function countDown() {
         pausebtn.classList.add('hidden');
         resumebtn.classList.add('hidden');
         startbtn.classList.remove('hidden');
+        repeatAudio();
+
     }
     counter--;                                  //decrements the counter
     timer.textContent = counter;                //updating the timer in the DOM 
