@@ -4,7 +4,6 @@
 const timer = document.querySelector('.timer');
 const startbtn = document.querySelector('.start');
 const pausebtn = document.querySelector('.pause');
-//const stopbtn = document.querySelector('.stop');
 const resumebtn = document.querySelector('.resume');
 const addTime = document.querySelector('.addTime');
 const minusTime = document.querySelector('.decreaseTime');
@@ -15,21 +14,10 @@ const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 let extratime = 10;
 let counter = 10;
 let timestart;
+let audioCounter = 0;
 
-let test = 0;
-
-function repeatAudio() {
-    monkey1.play();
-    console.log('Repeat')
-    test++;
-
-    if (test === 3) {
-        monkey1.removeEventListener("ended", repeatAudio);
-        test = 0;
-    }
-
-}
-
+//Timer
+const [minutes, seconds] = [25, 0];
 
 
 
@@ -40,7 +28,6 @@ rewindTime();
 function countDown() {
     if (counter === 1) {
         clearInterval(timestart);
-        console.log("STOP")
         pausebtn.classList.add('hidden');
         resumebtn.classList.add('hidden');
         startbtn.classList.remove('hidden');
@@ -50,6 +37,17 @@ function countDown() {
     }
     counter--;                                  //decrements the counter
     timer.textContent = counter;                //updating the timer in the DOM 
+}
+
+function repeatAudio() {
+    monkey1.play();
+    audioCounter++;
+
+    if (audioCounter === 3) {
+        monkey1.removeEventListener("ended", repeatAudio);
+        audioCounter = 0;
+    }
+
 }
 
 //restart
@@ -105,7 +103,6 @@ startbtn.addEventListener('click', function () { //when the start button is clic
     startbtn.classList.add('hidden');           // hides the start button when the timer starts
     addTime.classList.add('hidden');
     minusTime.classList.add('hidden');
-    // stopbtn.classList.remove('hidden');
     pausebtn.classList.remove('hidden');
 
 });
