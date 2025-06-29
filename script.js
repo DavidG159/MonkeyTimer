@@ -15,24 +15,21 @@ const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 let extratime = 10;
 let counter = 10;
 let timestart;
+
 let test = 0;
 
-
-
 function repeatAudio() {
-
-
     monkey1.play();
+    console.log('Repeat')
     test++;
 
     if (test === 3) {
-        monkey1.removeEventListener("ended");
-        console.log('SFX STOP')
-    } else {
-        monkey1.addEventListener("ended", repeatAudio);
-        console.log('Repeat')
+        monkey1.removeEventListener("ended", repeatAudio);
+        test = 0;
     }
+
 }
+
 
 
 
@@ -48,6 +45,7 @@ function countDown() {
         resumebtn.classList.add('hidden');
         startbtn.classList.remove('hidden');
         repeatAudio();
+        monkey1.addEventListener("ended", repeatAudio);
 
     }
     counter--;                                  //decrements the counter
@@ -66,7 +64,7 @@ function rewindTime() {
     // stopbtn.classList.add('hidden');
     addTime.classList.remove('hidden');
     minusTime.classList.remove('hidden');
-
+    monkey1.removeEventListener('ended', repeatAudio);
 
 
 
