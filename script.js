@@ -4,7 +4,7 @@
 const timer = document.querySelector('.timer');
 const startbtn = document.querySelector('.start');
 const pausebtn = document.querySelector('.pause');
-const stopbtn = document.querySelector('.stop');
+//const stopbtn = document.querySelector('.stop');
 const resumebtn = document.querySelector('.resume');
 const addTime = document.querySelector('.addTime');
 const minusTime = document.querySelector('.decreaseTime');
@@ -23,18 +23,13 @@ function countDown() {
     if (counter === 1) {
         clearInterval(timestart);
         console.log("STOP")
-        startbtn.disabled = false;
-        resumebtn.disabled = true;
         pausebtn.classList.add('hidden');
         resumebtn.classList.add('hidden');
         startbtn.classList.remove('hidden');
-
-
     }
     counter--;                                  //decrements the counter
     timer.textContent = counter;                //updating the timer in the DOM 
 }
-
 
 //restart
 function rewindTime() {
@@ -45,7 +40,7 @@ function rewindTime() {
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
     resumebtn.classList.add('hidden');
-    stopbtn.classList.add('hidden');
+    // stopbtn.classList.add('hidden');
     addTime.classList.remove('hidden');
     minusTime.classList.remove('hidden');
 
@@ -89,7 +84,7 @@ startbtn.addEventListener('click', function () { //when the start button is clic
     startbtn.classList.add('hidden');           // hides the start button when the timer starts
     addTime.classList.add('hidden');
     minusTime.classList.add('hidden');
-
+    // stopbtn.classList.remove('hidden');
     pausebtn.classList.remove('hidden');
 
 });
@@ -97,9 +92,6 @@ startbtn.addEventListener('click', function () { //when the start button is clic
 //Pause Button
 pausebtn.addEventListener('click', function () {
     pauseTime();
-    pausebtn.disabled = true;                   // disables the pause button when clicked to prevent bugs 
-    resumebtn.disabled = false;                 // undisables the resume button so that the user can resume the timer when the pause button is clicked
-
     resumebtn.classList.remove('hidden');       // shows the resume button when the pause button is clicked
     pausebtn.classList.add('hidden');           // removes the pause button 
 
@@ -108,8 +100,7 @@ pausebtn.addEventListener('click', function () {
 //Resume Button
 resumebtn.addEventListener('click', function () {
     resumeTime();
-    pausebtn.disabled = false;                 //undisables the pause button
-    resumebtn.disabled = true;                 //disables the resume button to prevent bugs
+
 
     resumebtn.classList.add('hidden');         //hides the resume button 
     pausebtn.classList.remove('hidden');       //unhide the pause button
