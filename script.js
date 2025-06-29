@@ -17,7 +17,17 @@ let timestart;
 let audioCounter = 0;
 
 //Timer
-const [minutes, seconds] = [25, 0];
+let [minutes, seconds] = [25, 0];
+
+function displayTimer() {
+    seconds--;
+    if (seconds === 0) {
+        seconds = 0;
+        minutes--;
+    }
+
+
+}
 
 
 
@@ -53,8 +63,8 @@ function repeatAudio() {
 //restart
 function rewindTime() {
     clearInterval(timestart);
-    counter = 10;
-    timer.textContent = counter;
+    minutes = 25;
+    timer.textContent = minutes;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
