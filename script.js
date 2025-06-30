@@ -32,12 +32,31 @@ function displayTimer() {
 
 }
 
-let test = seconds + "0";
+// minutes--;
+// if (minutes--) {
+//     seconds = 60;
+//     setInterval(seconds--, 1000);
 
-console.log(seconds);
 
-console.log(test);
-console.log(typeof test);
+// }
+
+seconds = 10;
+
+const test = setInterval(() => {
+
+    seconds--;
+
+    if (seconds === 0) {
+        console.log(`Seconds:${seconds}0`);
+        clearInterval(test);
+    } else if (seconds < 10) {
+        console.log(`Seconds:0${seconds}`);
+    } else {
+        console.log(`Seconds:${seconds}`);
+    }
+
+}, 1000);
+
 
 
 //setInterval(displayTimer, 1000);
@@ -164,6 +183,3 @@ restart.addEventListener('click', function () {
 
     rewindTime();
 });
-
-
-console.log(timestart);
