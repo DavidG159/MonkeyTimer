@@ -20,17 +20,24 @@ let audioCounter = 0;
 let [minutes, seconds] = [25, 0];
 
 function displayTimer() {
-    seconds--;
-    if (seconds === 0) {
-        seconds = 0;
-        minutes--;
-    }
-    let m = minutes < 10 ? "0" + minutes : minutes;
-    let s = seconds < 10 ? "0" + seconds : seconds;
+    // seconds--;
+    // if (seconds === 0) {
+    //     seconds = 0;
+    //     minutes--;
+    // }
+    // let m = minutes < 10 ? "0" + minutes : minutes;
+    // let s = seconds < 10 ? "0" + seconds : seconds;
 
-    timer.textContent = `${m}:${s}`;
+    // timer.textContent = `${m}:${s}`;
 
 }
+
+let test = seconds + "0";
+
+console.log(seconds);
+
+console.log(test);
+console.log(typeof test);
 
 
 //setInterval(displayTimer, 1000);
@@ -69,7 +76,7 @@ function repeatAudio() {
 function rewindTime() {
     clearInterval(timestart);
     minutes = 25;
-    timer.textContent = `${minutes}:${seconds}`;
+    //timer.textContent = `${minutes}:${seconds}`;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
