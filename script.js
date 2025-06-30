@@ -25,10 +25,15 @@ function displayTimer() {
         seconds = 0;
         minutes--;
     }
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
 
+    timer.textContent = `${m}:${s}`;
 
 }
 
+
+//setInterval(displayTimer, 1000);
 
 
 
@@ -46,7 +51,7 @@ function countDown() {
 
     }
     counter--;                                  //decrements the counter
-    timer.textContent = counter;                //updating the timer in the DOM 
+    //timer.textContent = `${minutes}:${seconds}`;                //updating the timer in the DOM 
 }
 
 function repeatAudio() {
@@ -64,7 +69,7 @@ function repeatAudio() {
 function rewindTime() {
     clearInterval(timestart);
     minutes = 25;
-    timer.textContent = minutes;
+    timer.textContent = `${minutes}:${seconds}`;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
