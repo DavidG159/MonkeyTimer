@@ -17,7 +17,7 @@ let timestart;
 let audioCounter = 0;
 
 //Timer
-let [minutes, seconds] = [25, 0];
+//let [minutes, seconds] = [25, 0];
 
 function displayTimer() {
     // seconds--;
@@ -40,19 +40,25 @@ function displayTimer() {
 
 // }
 
-seconds = 10;
+let minutes = 15;
+let seconds = 10;
 
 const test = setInterval(() => {
 
     seconds--;
 
     if (seconds === 0) {
-        console.log(`Seconds:${seconds}0`);
+
+        console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+        minutes--;
+        test;
+        seconds = 10;
         clearInterval(test);
+
     } else if (seconds < 10) {
-        console.log(`Seconds:0${seconds}`);
+        console.log(`Minutes:${minutes} Seconds:0${seconds}`);
     } else {
-        console.log(`Seconds:${seconds}`);
+        console.log(`Minutes:${minutes} Seconds:${seconds}`);
     }
 
 }, 1000);
