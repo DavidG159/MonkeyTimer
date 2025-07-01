@@ -41,19 +41,19 @@ function displayTimer() {
 // }
 
 let minutes = 2;
-let seconds = 10;
+let seconds = 60;
 const test = setInterval(() => {
     seconds--;
     if (seconds === 0) {
         if (minutes === 0 && seconds === 0) {
-            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
             clearInterval(test);
+            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
             console.log('STOP');
 
         } else {
             console.log(`Minutes:${minutes} Seconds:${seconds}0`);
             minutes--;
-            seconds = 10;
+            seconds = 60;
 
 
         }
