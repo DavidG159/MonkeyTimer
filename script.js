@@ -21,10 +21,11 @@ let theTime;
 //function displayTimer() {
 
 //Timer
-let [minutes, seconds] = [25, 0];
+let [minutes, seconds] = [24, 59];
 
 const displayTimer = function () {
 
+    timer.textContent = `${minutes}:${seconds}`;
     seconds--;
 
 
@@ -33,8 +34,7 @@ const displayTimer = function () {
             clearInterval(test);
             console.log(`Minutes:${minutes} Seconds:${seconds}0`);
             console.log('STOP');
-            repeatAudio();
-            monkey1.addEventListener("ended", repeatAudio);
+
 
         } else {
             console.log(`Minutes:${minutes} Seconds:${seconds}0`);
@@ -89,9 +89,7 @@ function repeatAudio() {
 //restart
 function rewindTime() {
     clearInterval(timestart);
-    minutes = 25;
-    seconds = 60;
-    timer.textContent = `${minutes}:00`;
+    timer.textContent = `25:00`;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
