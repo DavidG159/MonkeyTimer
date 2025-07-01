@@ -40,27 +40,29 @@ function displayTimer() {
 
 // }
 
-let minutes = 15;
+let minutes = 2;
 let seconds = 10;
-
 const test = setInterval(() => {
-
     seconds--;
-
     if (seconds === 0) {
+        if (minutes === 0 && seconds === 0) {
+            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+            clearInterval(test);
+            console.log('STOP');
 
-        console.log(`Minutes:${minutes} Seconds:${seconds}0`);
-        minutes--;
-        test;
-        seconds = 10;
-        clearInterval(test);
+        } else {
+            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+            minutes--;
+            seconds = 10;
+
+
+        }
 
     } else if (seconds < 10) {
         console.log(`Minutes:${minutes} Seconds:0${seconds}`);
     } else {
         console.log(`Minutes:${minutes} Seconds:${seconds}`);
     }
-
 }, 1000);
 
 
@@ -100,7 +102,7 @@ function repeatAudio() {
 //restart
 function rewindTime() {
     clearInterval(timestart);
-    minutes = 25;
+    //minutes = 25;
     //timer.textContent = `${minutes}:${seconds}`;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
