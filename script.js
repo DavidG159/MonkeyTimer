@@ -17,53 +17,44 @@ let timestart;
 let audioCounter = 0;
 
 //Timer
-//let [minutes, seconds] = [25, 0];
+let [minutes, seconds] = [25, 0];
 
 function displayTimer() {
-    // seconds--;
-    // if (seconds === 0) {
-    //     seconds = 0;
-    //     minutes--;
-    // }
-    // let m = minutes < 10 ? "0" + minutes : minutes;
-    // let s = seconds < 10 ? "0" + seconds : seconds;
 
-    // timer.textContent = `${m}:${s}`;
+    //     let minutes = 2;
+    // let seconds = 60;
+    const test = setInterval(() => {
+        seconds--;
+        if (seconds === 0) {
+            if (minutes === 0 && seconds === 0) {
+                clearInterval(test);
+                console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+                console.log('STOP');
+
+            } else {
+                console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+                minutes--;
+                seconds = 60;
+
+
+            }
+
+        } else if (seconds < 10) {
+            console.log(`Minutes:${minutes} Seconds:0${seconds}`);
+        } else {
+            console.log(`Minutes:${minutes} Seconds:${seconds}`);
+        }
+    }, 1000);
+    pausebtn.classList.add('hidden');
+    resumebtn.classList.add('hidden');
+    startbtn.classList.remove('hidden');
+    repeatAudio();
+    monkey1.addEventListener("ended", repeatAudio);
 
 }
 
-// minutes--;
-// if (minutes--) {
-//     seconds = 60;
-//     setInterval(seconds--, 1000);
 
 
-// }
-
-let minutes = 2;
-let seconds = 60;
-const test = setInterval(() => {
-    seconds--;
-    if (seconds === 0) {
-        if (minutes === 0 && seconds === 0) {
-            clearInterval(test);
-            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
-            console.log('STOP');
-
-        } else {
-            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
-            minutes--;
-            seconds = 60;
-
-
-        }
-
-    } else if (seconds < 10) {
-        console.log(`Minutes:${minutes} Seconds:0${seconds}`);
-    } else {
-        console.log(`Minutes:${minutes} Seconds:${seconds}`);
-    }
-}, 1000);
 
 
 
@@ -102,8 +93,9 @@ function repeatAudio() {
 //restart
 function rewindTime() {
     clearInterval(timestart);
-    //minutes = 25;
-    //timer.textContent = `${minutes}:${seconds}`;
+    minutes = 25;
+    seconds = 60;
+    timer.textContent = `${minutes}:00`;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
@@ -147,7 +139,7 @@ function minusTimer() {
 
 //Start Button
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
-    timestart = setInterval(countDown, 1000);
+    displayTimer();
     startbtn.disabled = true;                   //disables the start button when the timer starts
     startbtn.classList.add('hidden');           // hides the start button when the timer starts
     addTime.classList.add('hidden');
