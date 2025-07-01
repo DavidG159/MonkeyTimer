@@ -15,47 +15,43 @@ let extratime = 10;
 let counter = 10;
 let timestart;
 let audioCounter = 0;
+let theTime;
+
+
+//function displayTimer() {
 
 //Timer
 let [minutes, seconds] = [25, 0];
 
-function displayTimer() {
+const displayTimer = function () {
 
-    //     let minutes = 2;
-    // let seconds = 60;
-    const test = setInterval(() => {
-        seconds--;
-        if (seconds === 0) {
-            if (minutes === 0 && seconds === 0) {
-                clearInterval(test);
-                console.log(`Minutes:${minutes} Seconds:${seconds}0`);
-                console.log('STOP');
-
-            } else {
-                console.log(`Minutes:${minutes} Seconds:${seconds}0`);
-                minutes--;
-                seconds = 60;
+    seconds--;
 
 
-            }
+    if (seconds === 0) {
+        if (minutes === 0 && seconds === 0) {
+            clearInterval(test);
+            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+            console.log('STOP');
+            repeatAudio();
+            monkey1.addEventListener("ended", repeatAudio);
 
-        } else if (seconds < 10) {
-            console.log(`Minutes:${minutes} Seconds:0${seconds}`);
         } else {
-            console.log(`Minutes:${minutes} Seconds:${seconds}`);
-        }
-    }, 1000);
-    pausebtn.classList.add('hidden');
-    resumebtn.classList.add('hidden');
-    startbtn.classList.remove('hidden');
-    repeatAudio();
-    monkey1.addEventListener("ended", repeatAudio);
+            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+            minutes--;
+            seconds = 60;
 
+
+        }
+
+    } else if (seconds < 10) {
+        console.log(`Minutes:${minutes} Seconds:0${seconds}`);
+    } else {
+        console.log(`Minutes:${minutes} Seconds:${seconds}`);
+    }
 }
 
-
-
-
+//}
 
 
 //setInterval(displayTimer, 1000);
@@ -111,12 +107,12 @@ function rewindTime() {
 
 //pause
 function pauseTime() {
-    clearInterval(timestart);
+    clearInterval(theTime);
     console.log("Pause button is clicked!");
 }
 //resume
 function resumeTime() {
-    timestart = setInterval(countDown, 1000);
+    theTime = setInterval(displayTimer, 1000);
     console.log('Time is resumed');
 }
 //add time
@@ -139,7 +135,8 @@ function minusTimer() {
 
 //Start Button
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
-    displayTimer();
+
+    theTime = setInterval(displayTimer, 1000);
     startbtn.disabled = true;                   //disables the start button when the timer starts
     startbtn.classList.add('hidden');           // hides the start button when the timer starts
     addTime.classList.add('hidden');
