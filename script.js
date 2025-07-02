@@ -5,8 +5,10 @@ const timer = document.querySelector('.timer');
 const startbtn = document.querySelector('.start');
 const pausebtn = document.querySelector('.pause');
 const resumebtn = document.querySelector('.resume');
-const addTime = document.querySelector('.addTime');
-const minusTime = document.querySelector('.decreaseTime');
+const addTimeTen = document.querySelector('.addTime1'); // Add 10 mins
+const minusTimeTen = document.querySelector('.decreaseTime1'); // Decrease 10 mins
+const addTimeF = document.querySelector('.addTime2'); //Add 5 mins
+const minusTimeF = document.querySelector('.decreaseTime2'); // Decrease 5 mins
 const restart = document.querySelector('.restartTime');
 //SFX
 const monkey1 = new Audio('sfx/monkeysfx1.mp3');
@@ -117,7 +119,7 @@ function resumeTime() {
 }
 //add time
 function addTimer() {
-    timer.textContent = counter += extratime;
+    timer.textContent = minutes += extratime;
 
 }
 //minus time
