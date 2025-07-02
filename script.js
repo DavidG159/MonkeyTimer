@@ -21,23 +21,24 @@ let theTime;
 //function displayTimer() {
 
 //Timer
-let [minutes, seconds] = [24, 59];
+let [minutes, seconds] = [24, 60];
 
 const displayTimer = function () {
 
-    timer.textContent = `${minutes}:${seconds}`;
+
     seconds--;
 
 
     if (seconds === 0) {
         if (minutes === 0 && seconds === 0) {
-            clearInterval(test);
+
             console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+            clearInterval(test);
             console.log('STOP');
 
 
         } else {
-            console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+            timer.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
             minutes--;
             seconds = 60;
 
@@ -45,9 +46,10 @@ const displayTimer = function () {
         }
 
     } else if (seconds < 10) {
-        console.log(`Minutes:${minutes} Seconds:0${seconds}`);
+        timer.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
     } else {
-        console.log(`Minutes:${minutes} Seconds:${seconds}`);
+        timer.textContent = `${minutes}:${seconds}`;
     }
 }
 
@@ -88,7 +90,7 @@ function repeatAudio() {
 
 //restart
 function rewindTime() {
-    clearInterval(timestart);
+    clearInterval(theTime);
     timer.textContent = `25:00`;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
