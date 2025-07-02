@@ -13,7 +13,9 @@ const restart = document.querySelector('.restartTime');
 //SFX
 const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 
-let extratime = 10;
+let Ten = 10;
+let Five = 5;
+
 let counter = 10;
 let timestart;
 let audioCounter = 0;
@@ -23,7 +25,7 @@ let theTime;
 //function displayTimer() {
 
 //Timer
-let [minutes, seconds] = [24, 60];
+let [minutes, seconds] = [25, 60];
 
 const displayTimer = function () {
 
@@ -52,6 +54,7 @@ const displayTimer = function () {
 
     } else {
         timer.textContent = `${minutes}:${seconds}`;
+        console.log(`Minutes:${minutes} Seconds:${seconds}`);
     }
 }
 
@@ -93,14 +96,17 @@ function repeatAudio() {
 //restart
 function rewindTime() {
     clearInterval(theTime);
+    [minutes, seconds] = [25, 60];
     timer.textContent = `25:00`;
     startbtn.disabled = false;
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
     resumebtn.classList.add('hidden');
     // stopbtn.classList.add('hidden');
-    addTime.classList.remove('hidden');
-    minusTime.classList.remove('hidden');
+    addTimeTen.classList.remove('hidden');
+    minusTimeTen.classList.remove('hidden');
+    addTimeF.classList.remove('hidden');
+    minusTimeF.classList.remove('hidden');
     monkey1.removeEventListener('ended', repeatAudio);
 
 
@@ -119,17 +125,12 @@ function resumeTime() {
 }
 //add time
 function addTimer() {
-    timer.textContent = minutes += extratime;
-
+    timer.textContent = `${minutes += Ten}:00`;
 }
 //minus time
 function minusTimer() {
 
-    if (counter === 10) {
-        alert("Couldn't decrease the time anymore! Please add more time!")
-    } else {
-        timer.textContent = counter -= extratime;
-    }
+    timer.textContent = `${minutes -= Ten}:00`;
 }
 
 
@@ -139,10 +140,17 @@ function minusTimer() {
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
 
     theTime = setInterval(displayTimer, 1000);
+
+    setTimeout(() => {
+        minutes - 1;
+    }, 1000);
+
     startbtn.disabled = true;                   //disables the start button when the timer starts
     startbtn.classList.add('hidden');           // hides the start button when the timer starts
-    addTime.classList.add('hidden');
-    minusTime.classList.add('hidden');
+    addTimeTen.classList.add('hidden');
+    minusTimeTen.classList.add('hidden');
+    addTimeF.classList.add('hidden');
+    minusTimeF.classList.add('hidden');
     pausebtn.classList.remove('hidden');
 
 });
@@ -166,13 +174,13 @@ resumebtn.addEventListener('click', function () {
 });
 
 
-addTime.addEventListener('click', function () {
+addTimeTen.addEventListener('click', function () {
 
     addTimer();
 
 });
 
-minusTime.addEventListener('click', function () {
+minusTimeTen.addEventListener('click', function () {
 
     minusTimer();
 
