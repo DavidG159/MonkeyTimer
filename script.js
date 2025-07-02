@@ -125,11 +125,14 @@ function resumeTime() {
 }
 //add time
 function adjustTimer(value) {
-    minutes += value;
-    timer.textContent = `${minutes}:00`;
 
 
-
+    if (minutes + value >= 0) {
+        minutes += value;
+        timer.textContent = `${minutes}:00`;
+    } else {
+        alert("Can't decrease any further!");
+    }
 }
 //minus time
 function minusTimer(ten, five) {
