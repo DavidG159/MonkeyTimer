@@ -124,13 +124,19 @@ function resumeTime() {
     console.log('Time is resumed');
 }
 //add time
-function addTimer() {
-    timer.textContent = `${minutes += Ten}:00`;
+function adjustTimer(value) {
+    minutes += value;
+    timer.textContent = `${minutes}:00`;
+
+
+
 }
 //minus time
-function minusTimer() {
-
-    timer.textContent = `${minutes -= Ten}:00`;
+function minusTimer(ten, five) {
+    if (ten)
+        timer.textContent = `${minutes -= Ten}:00`;
+    else if (five)
+        timer.textContent = `${minutes -= Ten}:00`;
 }
 
 
@@ -142,8 +148,8 @@ startbtn.addEventListener('click', function () { //when the start button is clic
     theTime = setInterval(displayTimer, 1000);
 
     setTimeout(() => {
-        minutes - 1;
-    }, 1000);
+        minutes--;
+    }, 500);
 
     startbtn.disabled = true;                   //disables the start button when the timer starts
     startbtn.classList.add('hidden');           // hides the start button when the timer starts
@@ -176,13 +182,23 @@ resumebtn.addEventListener('click', function () {
 
 addTimeTen.addEventListener('click', function () {
 
-    addTimer();
+    adjustTimer(10);
 
 });
 
 minusTimeTen.addEventListener('click', function () {
 
-    minusTimer();
+    adjustTimer(-10);
+});
+
+addTimeF.addEventListener('click', function () {
+
+    adjustTimer(5);
+
+});
+
+minusTimeF.addEventListener('click', function () {
+    adjustTimer(-5);
 
 });
 
