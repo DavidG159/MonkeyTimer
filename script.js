@@ -38,6 +38,7 @@ const displayTimer = function () {
 
             console.log(`Minutes:${minutes} Seconds:${seconds}0`);
             clearInterval(test);
+            monkey1.play();
             console.log('STOP');
 
 
