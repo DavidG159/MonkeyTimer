@@ -57,17 +57,7 @@ h1 img {
     display: none;
 }
 
-.timer {
-    font-weight: 700;
-    text-align: center;
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 6em;
-    color: #AEC8A4;
-    text-shadow: 4px 4px #8A784E;
 
-}
 
 .btn {
     height: 2em;
@@ -86,4 +76,24 @@ h1 img {
 
 body {
     background-color: #E7EFC7;
+}
+
+.box {
+
+    border: 5px solid #A7C1A8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.timer {
+
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6em;
+    color: #AEC8A4;
+    text-shadow: 4px 4px #8A784E;
+
 }
