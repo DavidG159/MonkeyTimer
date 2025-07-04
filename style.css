@@ -65,6 +65,7 @@ h1 img {
 .btn {
     height: 2em;
     width: 6em;
+    cursor: pointer;
 }
 
 .btnplacement {
