@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Menbere:wght@100..700&display=swap');
 
 
 /**KeyFrames**/
@@ -46,9 +47,11 @@ h1 img {
 }
 
 .desc {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 1.5em;
+    font-family: "Menbere", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 2em;
+    font-style: normal;
     text-align: center;
 
 }
@@ -81,9 +84,12 @@ body {
 .box {
 
     border: 5px solid #A7C1A8;
+    padding: 5em;
     border-radius: 5px;
-    box-sizing: border-box;
-    padding: 10px;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    background-color: #D1D8BE;
 }
 
 .timer {
