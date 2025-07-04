@@ -37,7 +37,7 @@ const displayTimer = function () {
         if (minutes === 0 && seconds === 0) {
 
             console.log(`Minutes:${minutes} Seconds:${seconds}0`);
-            clearInterval(test);
+            clearInterval(theTime);
             monkey1.play();
             console.log('STOP');
 
