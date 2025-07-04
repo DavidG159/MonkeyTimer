@@ -134,13 +134,7 @@ function adjustTimer(value) {
         alert("Can't decrease any further!");
     }
 }
-//minus time
-function minusTimer(ten, five) {
-    if (ten)
-        timer.textContent = `${minutes -= Ten}:00`;
-    else if (five)
-        timer.textContent = `${minutes -= Ten}:00`;
-}
+
 
 
 //LISTENERS
