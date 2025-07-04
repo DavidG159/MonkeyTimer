@@ -22,7 +22,6 @@ let audioCounter = 0;
 let theTime;
 
 
-//function displayTimer() {
 
 //Timer
 let [minutes, seconds] = [25, 60];
@@ -37,6 +36,7 @@ const displayTimer = function () {
         if (minutes === 0 && seconds === 0) {
 
             console.log(`Minutes:${minutes} Seconds:${seconds}0`);
+            timer.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
             clearInterval(theTime);
             monkey1.play();
             console.log('STOP');
@@ -58,11 +58,6 @@ const displayTimer = function () {
         console.log(`Minutes:${minutes} Seconds:${seconds}`);
     }
 }
-
-//}
-
-
-//setInterval(displayTimer, 1000);
 
 
 
