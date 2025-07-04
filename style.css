@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 
 /**KeyFrames**/
@@ -59,7 +60,13 @@ h1 img {
 .timer {
     font-weight: 700;
     text-align: center;
-    padding-top: 2em;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6em;
+    color: #AEC8A4;
+    text-shadow: 4px 4px #8A784E;
+
 }
 
 .btn {
