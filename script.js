@@ -127,7 +127,7 @@ function resumeTime() {
 function adjustTimer(value) {
 
 
-    if (minutes + value >= 0) {
+    if (minutes + value >= 5) {
         minutes += value;
         timer.textContent = `${minutes}:00`;
     } else {
