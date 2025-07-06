@@ -65,22 +65,6 @@ const displayTimer = function () {
 rewindTime();
 
 //FUNCTIONS
-
-
-function countDown() {
-    if (counter === 1) {
-        clearInterval(timestart);
-        pausebtn.classList.add('hidden');
-        resumebtn.classList.add('hidden');
-        startbtn.classList.remove('hidden');
-        repeatAudio();
-        monkey1.addEventListener("ended", repeatAudio);
-
-    }
-    counter--;                                  //decrements the counter
-    //timer.textContent = `${minutes}:${seconds}`;                //updating the timer in the DOM 
-}
-
 function repeatAudio() {
     monkey1.play();
     audioCounter++;
