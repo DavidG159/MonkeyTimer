@@ -12,6 +12,7 @@ const minusTimeF = document.querySelector('.decreaseTime2'); // Decrease 5 mins
 const restart = document.querySelector('.restartTime');
 //SFX
 const monkey1 = new Audio('sfx/monkeysfx1.mp3');
+const clicsfx = new Audio('sfx/click2.mp3');
 
 let Ten = 10;
 let Five = 5;
@@ -64,6 +65,8 @@ const displayTimer = function () {
 rewindTime();
 
 //FUNCTIONS
+
+
 function countDown() {
     if (counter === 1) {
         clearInterval(timestart);
@@ -137,6 +140,7 @@ function adjustTimer(value) {
 
 //Start Button
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
+    clicsfx.play();
 
     theTime = setInterval(displayTimer, 1000);
 
@@ -156,6 +160,7 @@ startbtn.addEventListener('click', function () { //when the start button is clic
 
 //Pause Button
 pausebtn.addEventListener('click', function () {
+    clicsfx.play();
     pauseTime();
     resumebtn.classList.remove('hidden');       // shows the resume button when the pause button is clicked
     pausebtn.classList.add('hidden');           // removes the pause button 
@@ -164,6 +169,7 @@ pausebtn.addEventListener('click', function () {
 
 //Resume Button
 resumebtn.addEventListener('click', function () {
+    clicsfx.play();
     resumeTime();
 
 
@@ -174,28 +180,30 @@ resumebtn.addEventListener('click', function () {
 
 
 addTimeTen.addEventListener('click', function () {
-
+    clicsfx.play();
     adjustTimer(10);
 
 });
 
 minusTimeTen.addEventListener('click', function () {
-
+    clicsfx.play();
     adjustTimer(-10);
 });
 
 addTimeF.addEventListener('click', function () {
-
+    clicsfx.play();
     adjustTimer(5);
 
 });
 
 minusTimeF.addEventListener('click', function () {
+    clicsfx.play();
     adjustTimer(-5);
 
 });
 
 restart.addEventListener('click', function () {
+    clicsfx.play();
 
     rewindTime();
 });
