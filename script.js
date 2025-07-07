@@ -139,6 +139,7 @@ startbtn.addEventListener('click', function () { //when the start button is clic
     addTimeF.classList.add('hidden');
     minusTimeF.classList.add('hidden');
     pausebtn.classList.remove('hidden');
+    resumebtn.classList.add('hidden');
 
 });
 
