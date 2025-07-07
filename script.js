@@ -10,6 +10,7 @@ const minusTimeTen = document.querySelector('.decreaseTime1'); // Decrease 10 mi
 const addTimeF = document.querySelector('.addTime2'); //Add 5 mins
 const minusTimeF = document.querySelector('.decreaseTime2'); // Decrease 5 mins
 const restart = document.querySelector('.restartTime');
+const monkepic1 = document.querySelector('.monke1');
 //SFX
 const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 const clicsfx = new Audio('sfx/click2.mp3');
