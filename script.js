@@ -13,19 +13,17 @@ const restart = document.querySelector('.restartTime');
 //SFX
 const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 const clicsfx = new Audio('sfx/click2.mp3');
-
 let Ten = 10;
 let Five = 5;
-
 let counter = 10;
 let timestart;
 let audioCounter = 0;
 let theTime;
-
-
-
 //Timer
 let [minutes, seconds] = [25, 60];
+
+
+
 
 const displayTimer = function () {
 
@@ -85,7 +83,6 @@ function rewindTime() {
     startbtn.classList.remove('hidden');
     pausebtn.classList.add('hidden');
     resumebtn.classList.add('hidden');
-    // stopbtn.classList.add('hidden');
     addTimeTen.classList.remove('hidden');
     minusTimeTen.classList.remove('hidden');
     addTimeF.classList.remove('hidden');
