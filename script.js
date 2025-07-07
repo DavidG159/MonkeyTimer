@@ -162,13 +162,13 @@ resumebtn.addEventListener('click', function () {
 
 });
 
-
+//Add time
 addTimeTen.addEventListener('click', function () {
     clicsfx.play();
     adjustTimer(10);
 
 });
-
+//Minus time
 minusTimeTen.addEventListener('click', function () {
     clicsfx.play();
     adjustTimer(-10);
@@ -186,6 +186,7 @@ minusTimeF.addEventListener('click', function () {
 
 });
 
+//Rewind
 restart.addEventListener('click', function () {
     clicsfx.play();
 
