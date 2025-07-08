@@ -12,6 +12,9 @@ const minusTimeF = document.querySelector('.decreaseTime2'); // Decrease 5 mins
 const restart = document.querySelector('.restartTime');
 const monkepic1 = document.querySelector('.monke1');
 const text_alert = document.querySelector('.alert_text');
+const modal = document.querySelector('.modal');
+const close_modal = document.querySelector('.close-modal');
+const overlay = document.querySelector('.overlay');
 //SFX
 const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 const clicsfx = new Audio('sfx/click2.mp3');
@@ -24,6 +27,19 @@ let theTime;
 //Timer
 let [minutes, seconds] = [25, 60];
 
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden'))
+        closeModal();
+
+});
+
+
+
+const closeModal = function () {
+    modal.classList.add('hidden');
+    monkepic1.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
 
 
 
@@ -41,6 +57,11 @@ const displayTimer = function () {
             clearInterval(theTime);
             monkey1.play();
             console.log('STOP');
+
+            modal.classList.remove('hidden');
+            close_modal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+            monkepic1.classList.remove('hidden');
 
 
         } else {
