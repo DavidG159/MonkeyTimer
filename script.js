@@ -39,6 +39,7 @@ const closeModal = function () {
     modal.classList.add('hidden');
     monkepic1.classList.add('hidden');
     overlay.classList.add('hidden');
+    close_modal.add('hidden');
 }
 
 
@@ -143,6 +144,7 @@ function adjustTimer(value) {
 //LISTENERS
 
 overlay.addEventListener('click', closeModal);
+close_modal.addEventListener('click', closeModal);
 
 //Start Button
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
