@@ -142,6 +142,8 @@ function adjustTimer(value) {
 
 //LISTENERS
 
+overlay.addEventListener('click', closeModal);
+
 //Start Button
 startbtn.addEventListener('click', function () { //when the start button is clicked the timer starts counting down to every 1 second
     clicsfx.play();
