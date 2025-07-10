@@ -26,7 +26,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-    z-index: 0;
+    z-index: 1;
 }
 
 
@@ -41,7 +41,7 @@
     /* Centers horizontally */
     align-items: center;
     /* Centers vertically */
-    z-index: 1;
+    z-index: 2;
 }
 
 .monke1 {
@@ -54,7 +54,7 @@
     object-fit: contain;
     /* Maintains aspect ratio */
     border-radius: 60px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .close-modal {
@@ -66,7 +66,7 @@
     cursor: pointer;
     border: none;
     background: none;
-    z-index: 3;
+    z-index: 4;
 }
 
 .fadeInDown {
