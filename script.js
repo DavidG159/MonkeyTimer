@@ -83,7 +83,7 @@ const displayTimer = function () {
 }
 
 
-
+//at the start of the website it's back to default
 rewindTime();
 
 //FUNCTIONS
@@ -98,7 +98,7 @@ function repeatAudio() {
 
 }
 
-//restart
+//restart or normal
 function rewindTime() {
     clearInterval(theTime);
     [minutes, seconds] = [25, 60];
