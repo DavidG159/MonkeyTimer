@@ -27,6 +27,7 @@ let theTime;
 //Timer
 let [minutes, seconds] = [25, 60];
 
+//When esc button is pressed the overlay exits
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !modal.classList.contains('hidden'))
         closeModal();
@@ -43,13 +44,9 @@ const closeModal = function () {
 }
 
 
-
+//Timer function countdown
 const displayTimer = function () {
-
-
     seconds--;
-
-
     if (seconds === 0) {
         if (minutes === 0 && seconds === 0) {
 
