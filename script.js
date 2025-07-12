@@ -18,6 +18,7 @@ const overlay = document.querySelector('.overlay');
 //SFX
 const monkey1 = new Audio('sfx/monkeysfx1.mp3');
 const clicsfx = new Audio('sfx/click2.mp3');
+//Test Timer
 let Ten = 10;
 let Five = 5;
 let counter = 10;
